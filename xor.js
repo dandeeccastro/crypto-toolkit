@@ -21,4 +21,5 @@ function oneTimePadDecrypt( encryptedData, pad ) {
 	return {decryptedData: decrypt};
 }
 
-export { oneTimePadEncrypt, oneTimePadDecrypt }
+exports.encrypt = oneTimePadEncrypt;
+exports.decrypt = oneTimePadDecrypt;
