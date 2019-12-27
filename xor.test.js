@@ -8,6 +8,7 @@ test('Encrypted data is not original data',() => {
 
 test('Decrypted data is equal to original data', () => {
 	let data = Math.random().toString(36).substring(7);
-	let encyption = xor.encrypt( data );
-	expect( xor.decrypt( encryption.result, encryption.pad ).decryptedData ).toBe( data );
+	let encryption = xor.encrypt( data );
+	let decrypted = xor.decrypt( encryption.result, encryption.key )
+	expect( decrypted.result ).toBe( data );
 })

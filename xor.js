@@ -8,7 +8,7 @@ function oneTimePadEncrypt( data ) {
 		result[i] = character.charCodeAt(0) ^ pad[i]
 		i++;
 	} 
-	return {result: result, pad: pad};
+	return { result: result, key: pad };
 }
 
 function oneTimePadDecrypt( encryptedData, pad ) {
@@ -18,7 +18,7 @@ function oneTimePadDecrypt( encryptedData, pad ) {
 		decrypt[i] = String.fromCharCode(decrypt[i])
 		i++;
 	} decrypt = decrypt.join('');
-	return {decryptedData: decrypt};
+	return { result: decrypt };
 }
 
 exports.encrypt = oneTimePadEncrypt;
